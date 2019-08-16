@@ -173,3 +173,7 @@ PRODUCT_PACKAGES += \
     TelephonyResCommon \
     WifiResCommon \
     NotchBarKiller
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts

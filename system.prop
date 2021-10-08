@@ -47,3 +47,9 @@ ro.netflix.bsp_rev=Q6115-31409-1
 
 # QuickCharge prop
 persist.vendor.quick.charge=1
+
+# USB Debugging
+persist.sys.usb.config=mtp,adb
+ro.debuggable=1
+persist.service.adb.enable=1
+persist.service.debuggable=1

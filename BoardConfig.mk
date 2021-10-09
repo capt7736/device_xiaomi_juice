@@ -7,6 +7,8 @@
 DEVICE_PATH := device/xiaomi/juice
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -24,6 +26,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a73
 
 TARGET_USES_64_BIT_BINDER := true
+TARGET_USES_UEFI := true
 
 # Platform
 TARGET_BOARD_PLATFORM := bengal
@@ -47,7 +50,7 @@ TARGET_OTA_ASSERT_DEVICE := lime,citrus,lemon,pomelo,juice
 # Audio
 AUDIO_FEATURE_ENABLED_HDMI_SPK := true
 
-#QTI Bluetooth
+# QTI Bluetooth
 include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
 
 # Bluetooth
@@ -110,7 +113,7 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=default
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -197,6 +200,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
 # Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 include device/qcom/sepolicy/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 

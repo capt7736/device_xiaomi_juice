@@ -98,19 +98,28 @@ public class KCalSettings extends PreferenceFragment implements
         String rgbString;
 
         switch (key) {
+            case PREF_ENABLED:
+                FileUtils.setValue(KCAL_ENABLE, (boolean) value);
+                mEnabled.setTitle((boolean) value ? R.string.kcal_enabled : R.string.kcal_disabled);
+                break;
+
+            case PREF_MINIMUM:
+                FileUtils.setValue(KCAL_MIN, (int) value);
+                break;
+
             case PREF_RED:
                 rgbString = value + " " + mGreen.getValue() + " " + mBlue.getValue();
-                FileUtils.setValue(KCAL_RED, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_GREEN:
                 rgbString = mRed.getValue() + " " + value + " " + mBlue.getValue();
-                FileUtils.setValue(KCAL_GREEN, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_BLUE:
                 rgbString = mRed.getValue() + " " + mGreen.getValue() + " " + value;
-                FileUtils.setValue(KCAL_BLUE, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_SATURATION:

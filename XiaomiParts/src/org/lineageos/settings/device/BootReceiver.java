@@ -53,6 +53,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
+	    FileUtils.setValue(DeviceSettings.DOUBLE_TAP_TO_WAKE_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_DOUBLE_TAP_TO_WAKE, 0));
         }
 
         FileUtils.setValue(DeviceSettings.VIBRATION_STRENGTH_PATH, Settings.Secure.getInt(

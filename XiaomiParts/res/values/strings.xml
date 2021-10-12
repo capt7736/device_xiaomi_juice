@@ -107,6 +107,13 @@
     <string name="kcal_presets">@string/presets_dialog_title</string>
     <string name="kcal_reset">Reset</string>
 
+    <!-- Gestures -->
+    <string name="gestures_title">Gestures</string>
+
+    <!-- Double Tap to Wake -->
+    <string name="double_tap_to_wake_title">Double Tap to Wake</string>
+    <string name="double_tap_to_wake_summary">Double Tap on screen to wake device</string>
+
     <!-- Speaker -->
     <string name="speaker_category">Speaker</string>
 

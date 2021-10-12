@@ -45,6 +45,10 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_DEVICE_KCAL = "device_kcal";
 
+    private static final String CATEGORY_GESTURES = "gestures";
+    public static final String PREF_DOUBLE_TAP_TO_WAKE = "double_tap_to_wake";
+    public static final String DOUBLE_TAP_TO_WAKE_PATH = "/sys/touchpanel/double_tap";
+
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
     public static final String CATEGORY_VIBRATOR = "vibration";
@@ -98,6 +102,12 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
+        if (FileUtils.fileWritable(DOUBLE_TAP_TO_WAKE_PATH)) {
+            SecureSettingSwitchPreference double_tap_to_wake = (SecureSettingSwitchPreference) findPreference(PREF_DOUBLE_TAP_TO_WAKE);
+            double_tap_to_wake.setChecked(FileUtils.getFileValueAsBoolean(DOUBLE_TAP_TO_WAKE_PATH, false));
+            double_tap_to_wake.setOnPreferenceChangeListener(this);
+        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_GESTURES)); }
+
         mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class);
@@ -141,6 +151,10 @@ public class DeviceSettings extends PreferenceFragment implements
                     getContext().startService(new Intent(getContext(), DiracService.class));
                     DiracService.sDiracUtils.setLevel(String.valueOf(value));
                 }
+                break;
+
+            case PREF_DOUBLE_TAP_TO_WAKE:
+                FileUtils.setValue(DOUBLE_TAP_TO_WAKE_PATH, (boolean) value);
                 break;
 
             case PREF_VIBRATION_STRENGTH:

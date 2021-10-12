@@ -102,4 +102,18 @@
                 android:targetPackage="org.lineageos.settings.device.speaker" />
         </Preference>
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibration"
+        android:title="@string/vibration_title">
+
+        <org.lineageos.settings.device.preferences.VibrationSeekBarPreference
+            android:defaultValue="80"
+            android:key="vibration_strength"
+            android:max="100"
+            android:title="@string/vibration_strength_title"
+            app:min="1"
+            app:units="%" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

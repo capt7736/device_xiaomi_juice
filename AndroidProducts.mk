@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_juice.mk
+    $(LOCAL_DIR)/colt_juice.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_juice-user \
-    dot_juice-userdebug \
-    dot_juice-eng
+    colt_juice-user \
+    colt_juice-userdebug \
+    colt_juice-eng

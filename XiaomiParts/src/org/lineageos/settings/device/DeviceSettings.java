@@ -51,14 +51,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
-    public static final String CATEGORY_VIBRATOR = "vibration";
-    public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";
-    public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
-
-    // value of vtg_min and vtg_max
-    public static final int MIN_VIBRATION = 116;
-    public static final int MAX_VIBRATION = 3596;
-
     private Preference mClearSpeakerPref;
 
     @Override
@@ -114,11 +106,6 @@ public class DeviceSettings extends PreferenceFragment implements
             startActivity(intent);
             return true;
         });
-
-        if (FileUtils.fileWritable(VIBRATION_STRENGTH_PATH)) {
-            VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
-            vibrationStrength.setOnPreferenceChangeListener(this);
-        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
     }
 
     @Override
@@ -155,11 +142,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_DOUBLE_TAP_TO_WAKE:
                 FileUtils.setValue(DOUBLE_TAP_TO_WAKE_PATH, (boolean) value);
-                break;
-
-            case PREF_VIBRATION_STRENGTH:
-                double vibrationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
-                FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
                 break;
 
             default:

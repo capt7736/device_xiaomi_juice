@@ -1,0 +1,3 @@
+on boot
+    chown system system /sys/touchpanel/double_tap
+    chmod 0777 /sys/touchpanel/double_tap

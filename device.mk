@@ -139,7 +139,8 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mi_thermald.rc
+    init.mi_thermald.rc \
+    double_tap.rc
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \

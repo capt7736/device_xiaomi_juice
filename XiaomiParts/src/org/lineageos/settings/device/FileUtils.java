@@ -122,4 +122,12 @@ public class FileUtils {
             SystemProperties.set(prop, "0");
         }
     }
+
+    static boolean getFileValueAsBoolean(String filename, boolean defValue) {
+        String fileValue = readLine(filename);
+        if (fileValue != null) {
+            return !fileValue.equals("0");
+        }
+        return defValue;
+    }
 }

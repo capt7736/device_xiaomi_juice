@@ -11,16 +11,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, device/xiaomi/juice/device.mk)
 
-# Inherit some common ColtOS stuff.
-$(call inherit-product, vendor/colt/config/common_full_phone.mk)
-COLT_BUILD_MAINTAINER := frostg012
+# Inherit some common NusantaraProject stuff.
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_BLUR := true
-TARGET_INCLUDE_PIXEL_CHARGER := true
+USE_PIXEL_CHARGING := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := colt_juice
+PRODUCT_NAME := nad_juice
 PRODUCT_DEVICE := juice
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := sm6115

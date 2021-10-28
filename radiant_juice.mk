@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, device/xiaomi/juice/device.mk)
 
-# Inherit some common NusantaraProject stuff.
+# Inherit some common Project Radiant stuff.
 $(call inherit-product, vendor/radiant/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080

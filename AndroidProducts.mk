@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/radiant_juice.mk
+    $(LOCAL_DIR)/cafex_juice.mk
 
 COMMON_LUNCH_CHOICES := \
-    nad_juice-user \
-    nad_juice-userdebug \
-    nad_juice-eng
+    cafex_juice-user \
+    cafex_juice-userdebug \
+    cafex_juice-eng

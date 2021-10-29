@@ -19,6 +19,7 @@ TARGET_USES_BLUR := true
 TARGET_INCLUDE_PIXEL_CHARGER := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := nad_juice

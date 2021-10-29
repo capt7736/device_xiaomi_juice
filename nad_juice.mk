@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/xiaomi/juice/device.mk)
 
 # Inherit common CAF-Extended configurations
-$(call inherit-product, vendor/nad/config/common.mk)
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_BLUR := true

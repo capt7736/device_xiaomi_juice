@@ -16,8 +16,9 @@ $(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_BLUR := true
-USE_PIXEL_CHARGING := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := nad_juice
@@ -29,5 +30,5 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Fingerprint
-BUILD_FINGERPRINT := "Redmi/lime_global/lime:10/QKQ1.200830.002/V12.0.7.0.QJQMIXM:user/release-keys"
-BUILD_DESCRIPTION := lime-user 10 QKQ1.200830.002 V12.0.7.0.QJQMIXM release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.211001.001/7641976:user/release-keys
+BUILD_DESCRIPTION := redfin-user 11 RQ3A.211001.001 7641976 release-key

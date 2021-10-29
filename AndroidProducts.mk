@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cafex_juice.mk
+    $(LOCAL_DIR)/nusa_juice.mk
 
 COMMON_LUNCH_CHOICES := \
-    cafex_juice-user \
-    cafex_juice-userdebug \
-    cafex_juice-eng
+    nusa_juice-user \
+    nusa_juice-userdebug \
+    nusa_juice-eng

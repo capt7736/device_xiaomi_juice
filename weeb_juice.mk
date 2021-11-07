@@ -14,10 +14,6 @@ $(call inherit-product, device/xiaomi/juice/device.mk)
 # Inherit some common Weeb Project stuff
 $(call inherit-product, vendor/weeb/build/product/weeb_product.mk)
 
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_USES_BLUR := true
-TARGET_INCLUDE_PIXEL_CHARGER := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 # Device identifier. This must come after all inclusions.

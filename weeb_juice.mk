@@ -9,10 +9,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
+$(call inherit-product, device/xiaomi/juice/device.mk)
+
 # Inherit some common Weeb Project stuff
 $(call inherit-product, vendor/weeb/build/product/weeb_product.mk)
-
-$(call inherit-product, device/xiaomi/juice/device.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_BLUR := true

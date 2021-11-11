@@ -14,6 +14,9 @@ $(call inherit-product, device/xiaomi/juice/device.mk)
 # Inherit some AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+TARGET_USES_BLUR := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 # Device identifier. This must come after all inclusions.

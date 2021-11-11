@@ -133,14 +133,24 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_juice
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Init
+PRODUCT_PACKAGES += \
+    init.mi_thermald.rc \
+    double_tap.rc
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
-
+ 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages

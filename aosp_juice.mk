@@ -14,6 +14,7 @@ $(call inherit-product, device/xiaomi/juice/device.mk)
 # Inherit some AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_BLUR := true
 TARGET_INCLUDE_PIXEL_CHARGER := true
 TARGET_FACE_UNLOCK_SUPPORTED := true

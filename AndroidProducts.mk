@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/weeb_juice.mk
+    $(LOCAL_DIR)/aosp_juice.mk
 
 COMMON_LUNCH_CHOICES := \
-    weeb_juice-user \
-    weeb_juice-userdebug \
-    weeb_juice-eng
+    aosp_juice-user \
+    aosp_juice-userdebug \
+    aosp_juice-eng
